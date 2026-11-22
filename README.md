@@ -76,9 +76,9 @@ are added, the last two commands are targets rather than working commands.
 
 | Member | Role | Owns |
 | --- | --- | --- |
-| TODO | TODO | TODO |
-| TODO | TODO | TODO |
-| TODO | TODO | TODO |
+| Weican Ye | Team leader | TODO |
+| Mohammed Parvez | TODO | TODO |
+| Akash Reddy | TODO | TODO |
 
 All three members must be able to explain the whole system (see
 [docs/team-and-roles.md](docs/team-and-roles.md)).
