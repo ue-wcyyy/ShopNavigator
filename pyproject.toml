@@ -1,0 +1,32 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "shopnavigator"
+version = "0.0.0"
+description = "Web shopping agent in a simulated store (DSC 120C Topic 5)"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "TODO" }
+authors = [{ name = "TODO" }]
+# TODO: pin runtime dependencies once the stack is agreed (UI, LLM client, config models).
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "ruff>=0.6", "pyyaml>=6"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/shopnavigator"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+pythonpath = ["src"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]

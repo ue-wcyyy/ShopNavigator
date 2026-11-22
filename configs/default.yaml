@@ -1,0 +1,41 @@
+# ShopNavigator — default configuration.
+# Committed on purpose: contains NO secrets. Credentials live in .env (git-ignored).
+
+app:
+  title: ShopNavigator
+  max_steps: 30            # hard cap on environment steps per task
+  timeout_seconds: 300     # hard wall-clock cap per task
+  require_user_confirmation: true   # nothing final happens without cart review
+
+simulator:
+  mode: tiny               # tiny | small-1000 | custom  (see docs/data-and-license.md)
+  catalog_path: data/processed/catalog.json
+  tasks_path: data/tasks/tasks.json
+  seed: 42
+  # Only these actions may be issued; anything else is an invalid action and is logged.
+  navigation_whitelist:
+    - search
+    - open_product
+    - select_option
+    - add_to_cart
+    - back
+
+agent:
+  policy: constraint_aware  # reactive | constraint_aware
+  max_searches: 6
+  max_product_pages: 10
+  replan_attempts: 2
+
+llm:
+  provider: openai          # TODO: confirm provider and model
+  model: TODO
+  temperature: 0.0
+  max_output_tokens: 800
+
+budget:
+  max_usd_per_task: 0.05
+  max_usd_per_run: 2.00
+
+logging:
+  trace_dir: runs/
+  level: INFO

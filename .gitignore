@@ -1,0 +1,41 @@
+# --- Secrets / local config (never commit) ---
+.env
+.env.*
+!.env.example
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+env/
+build/
+dist/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+
+# --- Project data: large or restricted copies stay local ---
+data/raw/*
+!data/raw/.gitkeep
+data/processed/*
+!data/processed/.gitkeep
+data/tasks/*
+!data/tasks/.gitkeep
+evaluation/tasks/*
+!evaluation/tasks/.gitkeep
+evaluation/results/*
+!evaluation/results/.gitkeep
+
+# --- Runtime artifacts ---
+runs/
+logs/
+*.log
+*.sqlite3
+
+# --- Editors / OS ---
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
